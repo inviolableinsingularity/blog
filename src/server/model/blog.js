@@ -46,16 +46,6 @@ export async function retrieveBlog(options = {}) {
 
   // Retrieve single document
   if (id) {
-    //fixme: temp mock data
-    /*
-    return {
-      id,
-      title: "Mock Blog Article",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac ipsum et ligula cursus ullamcorper eget sed felis. Praesent faucibus ex sit amet metus aliquet euismod. Vestibulum porttitor bibendum ante id semper. Etiam quis lacus quis lectus ullamcorper dapibus. Suspendisse porta porttitor faucibus. Donec quis purus aliquet, aliquet magna et, consectetur arcu. Pellentesque semper hendrerit dignissim. Curabitur viverra tellus nunc, vitae tempus neque lacinia in.",
-      thumbnailUrl: "https://picsum.photos/200",
-      timestamp: 1619459280,
-    };
-    */
 
     return new Promise((resolve, reject) => {
       db
@@ -77,32 +67,6 @@ export async function retrieveBlog(options = {}) {
 
   // Retrieve most recent documents
   else {
-    //fixme: temp mock data
-    /*
-    return [
-      {
-        id: 1,
-        title: "Mock Blog Article",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac ipsum et ligula cursus ullamcorper eget sed felis. Praesent faucibus ex sit amet metus aliquet euismod. Vestibulum porttitor bibendum ante id semper. Etiam quis lacus quis lectus ullamcorper dapibus. Suspendisse porta porttitor faucibus. Donec quis purus aliquet, aliquet magna et, consectetur arcu. Pellentesque semper hendrerit dignissim. Curabitur viverra tellus nunc, vitae tempus neque lacinia in.",
-        thumbnailUrl: "https://picsum.photos/320/240?id=1",
-        timestamp: 1619459280000,
-      },
-      {
-        id: 2,
-        title: "Mock Blog 2: Electric Boogaloo",
-        content: "Fusce tristique est metus, quis iaculis dui sagittis vel. Phasellus tincidunt, metus ac mollis rhoncus, magna tellus scelerisque erat, non blandit nisl nulla ut arcu. Aenean viverra dui metus, sit amet luctus urna rhoncus in. Curabitur massa velit, congue eget lacus sed, commodo aliquam neque. Donec iaculis sem tellus, at maximus diam interdum ut. Praesent non justo ultrices, euismod ante ut, laoreet erat. Vestibulum dictum id tellus eget elementum. Sed varius tellus mattis, pretium tortor in, malesuada dolor. Vestibulum consectetur finibus gravida. Vivamus porttitor ex sed augue feugiat, id semper ex ultricies.",
-        thumbnailUrl: "https://picsum.photos/320/240?id=2",
-        timestamp: 1619527763000,
-      },
-      {
-        id: 3,
-        title: "Return of the Mock Blog",
-        content: "Pellentesque et iaculis ex. Integer eros lacus, porttitor nec facilisis sit amet, consequat non ante. Nullam at orci pharetra, sagittis lacus at, molestie sapien. Nullam consequat magna tellus, id lacinia dui semper ac. Nam rhoncus hendrerit diam, id accumsan ex ultricies nec. Morbi tellus tellus, imperdiet non mollis eu, faucibus in lorem. Donec nec nisl non orci congue hendrerit eget in nunc. Vestibulum sodales quam at placerat ullamcorper. Pellentesque feugiat eget enim id dignissim.",
-        thumbnailUrl: "https://picsum.photos/320/240?id=3",
-        timestamp: 1619200117000,
-      },
-    ];
-    */
 
     // Hard-locked to last 10 blog posts in reverse chronological order for the
     // purpose of this exercise. Paging and filtering would occur here if we were to
