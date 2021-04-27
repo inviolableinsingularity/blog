@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Page {
+  position: relative;
+  margin: 0 auto;
+  width: 80vw;
+}
+
+/**
+  Basic responsive layout
+ */
+@media screen and (min-width: 720px) {
+  .Page {
+    width: auto;
+    max-width: 90vw;
+  }
+}
+
+/**
+  Cap out layout at a reasonable width so it doesn't go crazy on ultra-wide browser windows
+ */
+@media screen and (min-width: 1600px) {
+  .Page {
+    width: auto;
+    max-width: 1440px;
+  }
+}
+
+.Back {
+  font-size: 1.5rem;
+}

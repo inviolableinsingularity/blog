@@ -1,0 +1,47 @@
+.Home {
+  text-align: center;
+}
+
+.BlogListDivider {
+  margin: 1rem auto;
+  height: 1px;
+  max-width: 60%;
+  background-color: rgba(0,0,0,.15);
+}
+
+.BlogList {
+  position: relative;
+  width: 100%;
+}
+
+.BlogListEntry {
+}
+
+.BlogListEntry-thumbnail {
+  width: 100%;
+}
+
+.Authentication {
+  margin: 1rem 2rem 4rem;
+}
+
+/**
+  Basic responsive layout, displays images and text horizontally at tablet and higher resolution
+ */
+@media screen and (min-width: 720px) {
+ .BlogListEntry {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .BlogListEntry-content {
+    margin-left: 2rem;
+    text-align: left;
+  }
+
+  .BlogListEntry-thumbnail {
+    margin: 0;
+    width: 320px;
+    height: 240px;
+  }
+}
