@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
-import Editor from 'rich-markdown-editor';
+import {Editor} from '@bytemd/react';
+import gfm from '@bytemd/plugin-gfm';
+import 'bytemd/dist/index.min.css';
 
 import {loadBlog, loadBlogs} from "../lib/blogs";
 
@@ -26,7 +28,6 @@ async function fetchBlog({title, thumbnail, content}) {
 function postBlog({title, setTitle, thumbnail, setThumbnail, content, setContent, setError, history, dispatch}) {
   fetchBlog({title, thumbnail, content})
     .then((json) => {
-      console.log(json);
       if (json.error) {
         setError(json.error);
       } else {
@@ -40,6 +41,10 @@ function postBlog({title, setTitle, thumbnail, setThumbnail, content, setContent
       }
     });
 }
+
+const bytePlugins = [
+  gfm(),
+];
 
 // This can be improved to perform the login via async call instead of a hard POST
 const PostCreator = () => {
@@ -67,8 +72,8 @@ const PostCreator = () => {
           <input type="text" name="thumbnail" value={thumbnail} onChange={(e) => setThumbnail(e.target.value)}/>
         </div>
         <div>
-          <label htmlFor="content">Content:</label><br/>
-          <textarea name="content" value={content} onChange={(e) => setContent(e.target.value)}/>
+          Content:<br />
+          <Editor value={content} plugins={bytePlugins} onChange={(v) => setContent(v)} />
         </div>
         <div>
           <input type="submit" value="Post It!"/>

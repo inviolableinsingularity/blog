@@ -2,6 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 
+import {Viewer} from '@bytemd/react';
 import './Blog.css';
 
 const blogSelector = (state = {}) => {
@@ -21,7 +22,7 @@ const Blog = () => {
       <p>ID: {blog.id}</p>
       <p>Posted <strong>{(new Date(blog.timestamp)).toLocaleString()}</strong></p>
       {blog.thumbnailUrl && <div><img src={blog.thumbnailUrl} alt="" /></div> }
-      <p>{blog.content}</p>
+      <div><Viewer value={blog.content} /></div>
     </div>
   );
 };

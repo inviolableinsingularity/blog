@@ -9,8 +9,11 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
+    "@bytemd/plugin-gfm": "^1.9.1",
+    "@bytemd/react": "^1.9.1",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
+    "bytemd": "^1.9.1",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "markdown-it": "^12.0.6",
