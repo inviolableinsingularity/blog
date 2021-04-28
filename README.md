@@ -16,7 +16,10 @@ Notes:
 
 * This app uses neDB, a simple MongoDB-like datastore. In a production environment, a more robust DBMS or NoSQL
 would obviously be more desirable.
-* I had intended to include a WYSIWYG Markdown editor, but none of the ones I tried would work in an isometric
-environment, and I did not have enough time to find one that would. Whoops. :(
+* ~~I had intended to include a WYSIWYG Markdown editor, but none of the ones I tried would work in an isometric
+environment, and I did not have enough time to find one that would. Whoops. :(~~ I integrated ByteMD, a Markdown
+editor that isn't strictly WYSIWYG (it's a side-by-side editor), which was the only library I could find out of
+almost a dozen that was SSR-safe out of the box. While it's not really a true rich text experience, integration
+with a similar, more full-featured editor should not be significantly different.
 * The user credentials are hardcoded to ``admin`` and ``password`` for demo purposes. Obviously, there should be
 a proper datastore backing up the authentication system in a production-ready app.
